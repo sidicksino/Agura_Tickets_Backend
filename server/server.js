@@ -7,7 +7,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const userRoutes = require('./routes/user.routes');
 const authRoutes = require('./routes/auth.routes');
-
+const passwordResetRoutes = require('./routes/passwordResetRoutes');
 // Middleware
 app.use(express.json());
 
@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/password', passwordResetRoutes);
 
 // Start server
 app.listen(PORT, () => {
