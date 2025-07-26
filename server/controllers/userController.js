@@ -57,12 +57,12 @@ exports.register = async (req, res) => {
     ]);
 
     res.status(201).json({
-      message: 'User registered ✅',
+      message: 'User registered ',
       user_id
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Server error ❌' });
+    res.status(500).json({ error: 'Server error' });
   }
 };
 
@@ -98,6 +98,6 @@ exports.updateMe = (req, res) => {
 
   db.query(sql, [name, profile_photo, preferencesStr, userId], (err) => {
     if (err) return res.status(500).json({ error: err });
-    res.json({ message: 'Profile updated successfully ✅' });
+    res.json({ message: 'Profile updated successfully' });
   });
 };
